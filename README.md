@@ -88,7 +88,7 @@ Sistema web completo para la gestión de un taller de bobinado de motores eléct
     
   python manage.py runserver
   ```
-Verificar en: http://localhost:8000
+Verificar en: http://localhost:8000/api/auth/registro/
 
 ### Terminal 2: Frontend (React)
 
