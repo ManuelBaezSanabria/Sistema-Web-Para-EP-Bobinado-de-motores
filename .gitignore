@@ -1,0 +1,23 @@
+# Caché de Python y archivos compilados
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entorno virtual
+venv/
+venv*/
+.venv/
+
+# Variables de entorno
+.env
+
+# Base de datos SQLite (si usas temporal)
+*.sqlite3
+*.db
+
+# Archivos de PyCharm
+.idea/
+
+# Archivos de VS Code
+.vscode/
