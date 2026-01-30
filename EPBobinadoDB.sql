@@ -43,7 +43,7 @@ CREATE TABLE Usuarios (
     CreadoEn DATETIME2 DEFAULT SYSDATETIME(),
 
     -- Campos para Django auth
-    Username NVARCHAR(150) UNIQUE NULL,
+    Username NVARCHAR(150) NULL,
     LastLogin DATETIME2 NULL,
     IsSuperuser BIT DEFAULT 0,
     IsStaff BIT DEFAULT 0,

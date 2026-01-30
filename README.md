@@ -85,7 +85,9 @@ Sistema web completo para la gestión de un taller de bobinado de motores eléct
     
   ```bash
   cd backend
-    
+
+  python manage.py migrate  
+
   python manage.py runserver
   ```
 Verificar en: http://localhost:8000/api/auth/registro/
