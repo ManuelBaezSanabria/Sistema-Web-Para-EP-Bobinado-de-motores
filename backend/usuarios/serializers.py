@@ -5,10 +5,13 @@ from django.contrib.auth.hashers import make_password
 class RegistroSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, min_length=8)
     confirm_password = serializers.CharField(write_only=True)
+    rol = serializers.CharField(write_only=True)
+    cedula = serializers.CharField(required=True, max_length=20)  # Campo obligatorio
 
     class Meta:
         model = Usuario
-        fields = ['nombre', 'email', 'password', 'confirm_password', 'telefono']
+        fields = ['nombre', 'email', 'password', 'confirm_password', 'telefono', 'cedula', 'rol']
+
 
     def validate(self, data):
         if data['password'] != data['confirm_password']:
@@ -17,22 +20,25 @@ class RegistroSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         validated_data.pop('confirm_password')
+        rol_nombre = validated_data.pop('rol')
+        rol_obj, _ = Roles.objects.get_or_create(nombre=rol_nombre)  
 
-        rol_cliente, _ = Roles.objects.get_or_create(
-            nombre='Cliente',
-            defaults={'descripcion': 'Cliente del sistema'}
-        )
+        if 'username' not in validated_data:
+            validated_data['username'] = validated_data['email'].split('@')[0]
 
         usuario = Usuario(
             nombre=validated_data['nombre'],
             email=validated_data['email'],
             telefono=validated_data.get('telefono', ''),
-            rol=rol_cliente,
+            cedula=validated_data['cedula'],
+            rol=rol_obj,
+            username=validated_data['username'],
             activo=True
         )
         usuario.set_password(validated_data['password'])
         usuario.save()
         return usuario
+
 
 
 class LoginSerializer(serializers.Serializer):

@@ -5,6 +5,7 @@ import Usuarios from './components/Usuarios.tsx';
 import './App.css';
 import './styles/style.css';
 import './styles/admin.css';
+import RegistroSecretaria from './components/pages/Usuarios/RegistroSecretaria.tsx';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Registro />} />
             <Route path="/usuarios" element={<Usuarios />} />
+            <Route path="/usuarios/registro" element={<RegistroSecretaria />} />
           </Routes>
         </header>
       </div>

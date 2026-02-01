@@ -46,6 +46,7 @@ class UsuarioManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 class Usuario(AbstractBaseUser):
+    cedula = models.CharField(max_length=20, unique=True)
     id = models.AutoField(db_column='Id', primary_key=True)
     nombre = models.CharField(db_column='Nombre', max_length=100)
     email = models.EmailField(db_column='Email', unique=True, max_length=100)
