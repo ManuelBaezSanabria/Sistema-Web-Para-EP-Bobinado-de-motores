@@ -158,7 +158,7 @@ CREATE TABLE Proveedores (
     Id INT IDENTITY(1,1) PRIMARY KEY,
     Nombre NVARCHAR(100) NOT NULL,
     Contacto NVARCHAR(100),
-    CreadoPor INT NOT NULL,
+    CreadoPor INT ,
     FechaCreacion DATETIME2 DEFAULT SYSDATETIME(),
     CONSTRAINT FK_Proveedores_Usuarios
         FOREIGN KEY (CreadoPor) REFERENCES Usuarios(Id)
