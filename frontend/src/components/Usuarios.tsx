@@ -20,12 +20,12 @@ const Usuarios = () => {
 
   const eliminarUsuario = async (id: number) => {
     if (!window.confirm('¿Eliminar usuario?')) return;
-    await axios.delete(`${BASE_URL}/usuarios/${id}/`);
+    await axios.delete(`${BASE_URL}/api/auth/usuarios/${id}/`);
     cargarUsuarios();
   };
 
   const actualizarUsuario = async (data: any) => {
-    await axios.put(`${BASE_URL}/usuarios/${data.id}/`, data);
+    await axios.put(`${BASE_URL}/api/auth/usuarios/${data.id}/`, data);
     setEditUsuario(null);
     cargarUsuarios();
   };
