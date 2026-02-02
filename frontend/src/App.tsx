@@ -6,6 +6,7 @@ import './App.css';
 import './styles/style.css';
 import './styles/admin.css';
 import RegistroSecretaria from './components/pages/Usuarios/RegistroSecretaria.tsx';
+import Ordenes from './components/pages/Ordenes/Ordenes.tsx';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Registro />} />
             <Route path="/usuarios" element={<Usuarios />} />
             <Route path="/usuarios/registro" element={<RegistroSecretaria />} />
+            <Route path="/ordenes" element={<Ordenes />} />
           </Routes>
         </header>
       </div>
