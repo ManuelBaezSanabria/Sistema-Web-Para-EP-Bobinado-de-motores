@@ -1,24 +1,25 @@
 import React from 'react';
 import AdminHeader from './AdminHeader.tsx';
 import Sidebar from './Sidebar.tsx';
+import '../../styles/layout-admin.css';
 
 interface Props {
   children: React.ReactNode;
 }
 
-const LayoutAdmin = ({ children }: Props) => {
+const LayoutAdmin: React.FC<Props> = ({ children }) => {
   return (
-    <div className="admin-page">
-      <AdminHeader />
+    <div className="admin-layout">
       <Sidebar />
-
-      <main className="main-content">
-        {children}
-      </main>
-
-      <footer className="admin-footer">
-        © 2026 EP Bobinado de Motores
-      </footer>
+      <div className="admin-main-wrapper">
+        <AdminHeader />
+        <main className="admin-content">
+          {children}
+        </main>
+        <footer className="admin-footer">
+          © 2026 EP Bobinado de Motores
+        </footer>
+      </div>
     </div>
   );
 };

@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+//import LayoutAdmin from '../../layout/LayoutAdmin.tsx';
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'http://127.0.0.1:8000';
 
-const RegistroSecretaria = () => {
+
+const Registro = () => {
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
     telefono: '',
     password: '',
     confirm_password: '',
-    rol: 'Usuario', // Valor por defecto
+    cedula: '',
+    rol: 'Usuario', 
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -24,7 +27,7 @@ const RegistroSecretaria = () => {
 
     try {
       // Envía los datos al backend
-      const response = await axios.post(`${BASE_URL}/api/auth/usuarios/`, formData);
+      const response = await axios.post(`${BASE_URL}/api/auth/registro/`, formData);
       alert('Usuario registrado con éxito!');
       setFormData({
         nombre: '',
@@ -32,6 +35,7 @@ const RegistroSecretaria = () => {
         telefono: '',
         password: '',
         confirm_password: '',
+        cedula: '',
         rol: 'Usuario',
       });
     } catch (error: any) {
@@ -42,7 +46,7 @@ const RegistroSecretaria = () => {
   return (
     <div style={styles.container}>
       <div style={styles.card}>
-        <h2 style={styles.title}>Registro de Usuario (Secretaria)</h2>
+        <h2 style={styles.title}>Registrarse en el Sistema</h2>
         <form onSubmit={handleSubmit} style={styles.form}>
           <input
             type="text"
@@ -99,6 +103,15 @@ const RegistroSecretaria = () => {
             <option value="Usuario">Usuario</option>
           </select>
 
+          <input
+            type="text"
+            placeholder="Cédula"
+            value={formData.cedula}
+            onChange={e => setFormData({ ...formData, cedula: e.target.value })}
+            required
+            style={styles.input}
+          />
+
           <button type="submit" style={styles.button}>
             Registrarse
           </button>
@@ -108,7 +121,7 @@ const RegistroSecretaria = () => {
   );
 };
 
-export default RegistroSecretaria;
+export default Registro;
 
 const styles: { [key: string]: React.CSSProperties } = {
   container: {

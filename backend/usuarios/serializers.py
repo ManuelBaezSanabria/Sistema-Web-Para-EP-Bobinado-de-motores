@@ -58,11 +58,12 @@ class UsuarioListSerializer(serializers.ModelSerializer):
             'telefono',
             'rol',
             'activo',
-            'creadoen'
+            'creadoen',
+            'cedula'
         ]
 
 
 class UsuarioUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        fields = ['nombre', 'email', 'telefono', 'activo']
+        fields = ['nombre', 'email', 'telefono', 'activo', 'rol', 'cedula']

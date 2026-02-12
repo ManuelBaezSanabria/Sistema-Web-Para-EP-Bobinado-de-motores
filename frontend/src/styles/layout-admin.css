@@ -1,0 +1,91 @@
+/* ========================================
+   LAYOUT ADMIN
+======================================== */
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* ========================================
+   MAIN WRAPPER (Header + Content + Footer)
+======================================== */
+
+.admin-main-wrapper {
+  flex: 1;
+  margin-left: 260px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+/* ========================================
+   ADMIN CONTENT
+======================================== */
+
+.admin-content {
+  flex: 1;
+  padding: 24px;
+  background: #f8fafc;
+}
+
+.admin-content .page-header {
+  margin-bottom: 24px;
+}
+
+.admin-content .page-header h1 {
+  font-size: 28px;
+  color: #1e293b;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.admin-content .page-header p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* ========================================
+   ADMIN FOOTER
+======================================== */
+
+.admin-footer {
+  background: white;
+  border-top: 1px solid #e2e8f0;
+  padding: 16px 24px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+  .admin-main-wrapper {
+    margin-left: 70px;
+  }
+  
+  .admin-content {
+    padding: 16px;
+  }
+  
+  .admin-content .page-header h1 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-content {
+    padding: 12px;
+  }
+  
+  .admin-footer {
+    font-size: 12px;
+    padding: 12px;
+  }
+}

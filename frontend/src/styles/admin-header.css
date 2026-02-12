@@ -1,0 +1,340 @@
+/* ========================================
+   ADMIN HEADER
+======================================== */
+
+.admin-header {
+  background: white;
+  height: 70px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* ========================================
+   HEADER LOGO
+======================================== */
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.logo-icon {
+  font-size: 28px;
+  color: #3b82f6;
+}
+
+.logo-text {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   HEADER USER SECTION
+======================================== */
+
+.header-user-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.welcome-text {
+  color: #64748b;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.welcome-text strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.user-role-badge {
+  background: #e0f2fe;
+  color: #0284c7;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   HEADER ACTIONS
+======================================== */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 20px;
+  border-left: 1px solid #e2e8f0;
+}
+
+.header-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #f8fafc;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.header-btn:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+  transform: translateY(-1px);
+}
+
+.notification-btn {
+  position: relative;
+}
+
+.notification-count {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #ef4444;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
+  line-height: 1;
+}
+
+.settings-btn:hover {
+  color: #3b82f6;
+}
+
+.logout-btn {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.logout-btn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-text {
+  font-size: 14px;
+}
+
+/* ========================================
+   NOTIFICATIONS DROPDOWN
+======================================== */
+
+.notifications-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 360px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.notifications-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notifications-header h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.notifications-count {
+  background: #dbeafe;
+  color: #3b82f6;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.notifications-list {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.notifications-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notifications-list::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+.notifications-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.notification-item {
+  display: flex;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.notification-item:hover {
+  background: #f8fafc;
+}
+
+.notification-item.unread {
+  background: #eff6ff;
+}
+
+.notification-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #dbeafe;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-title {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.notification-time {
+  margin: 0;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.notifications-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  background: #f8fafc;
+}
+
+.notifications-footer a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.notifications-footer a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+  .admin-header {
+    padding: 0 16px;
+    height: 60px;
+  }
+  
+  .header-logo {
+    font-size: 18px;
+  }
+  
+  .logo-icon {
+    font-size: 24px;
+  }
+  
+  .welcome-text {
+    display: none;
+  }
+  
+  .user-role-badge {
+    display: none;
+  }
+  
+  .header-actions {
+    padding-left: 0;
+    border-left: none;
+  }
+  
+  .btn-text {
+    display: none;
+  }
+  
+  .header-btn {
+    padding: 10px;
+  }
+  
+  .notifications-dropdown {
+    width: calc(100vw - 32px);
+    right: -8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    display: none;
+  }
+  
+  .settings-btn {
+    display: none;
+  }
+}
