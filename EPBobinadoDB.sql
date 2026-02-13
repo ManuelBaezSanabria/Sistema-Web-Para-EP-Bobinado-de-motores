@@ -281,3 +281,19 @@ INSERT INTO Roles (Nombre, Descripcion) VALUES
 ('Técnico', 'Realiza diagnósticos y reparaciones'),
 ('Recepcionista', 'Registra órdenes y clientes'),
 ('Cliente', 'Acceso limitado a su información');
+
+/* Modificacion tabla motores*/
+-- Paso 1: Eliminar la constraint existente
+ALTER TABLE Motores
+DROP CONSTRAINT FK_Motores_Clientes;
+
+-- Paso 2: Renombrar la columna (opcional pero recomendado)
+EXEC sp_rename 'Motores.ClienteId', 'UsuarioId', 'COLUMN';
+
+-- Paso 3: Crear la nueva constraint apuntando a Usuarios
+ALTER TABLE Motores
+ADD CONSTRAINT FK_Motores_Usuarios
+    FOREIGN KEY (UsuarioId) REFERENCES Usuarios(Id);
+
+-- Paso 4: (Opcional) Si quieres eliminar la tabla Clientes después
+-- DROP TABLE Clientes;
