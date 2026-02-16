@@ -33,7 +33,8 @@ const Proveedores = () => {
   };
 
   return (
-    <div className="form-container">
+    <div className="body">
+    <div className="form-container" >
     <h2>Registro</h2>
     <form onSubmit={handleSubmit}>
       <div className="form-group">
@@ -62,7 +63,7 @@ const Proveedores = () => {
     </form>
 
   </div>
-
+</div>
   );
 
 

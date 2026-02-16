@@ -13,7 +13,8 @@ Sistema web completo para la gestión de un taller de bobinado de motores eléct
 
 - Sistema-Web-Para-EP-Bobinado-de-motores/
   - backend/
-      - usuarios/ (Implementado)
+      - usuarios (Implementado)
+      - proveedores (Implementado)
       - clientes (Por implementar)
       - motores (Por implementar)
       - inventario (Por implementar)
