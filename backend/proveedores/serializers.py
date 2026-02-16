@@ -12,3 +12,21 @@ class ProveedoresSerializer(serializers.ModelSerializer):
         print(validated_data)
         proveedor = Proveedores.objects.create(**validated_data)
         return proveedor
+
+
+class ProveedoresListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Proveedores
+        fields = [
+            'id',
+            'nombre',
+            'contacto',
+            'creadopor',
+            'fechacreacion'
+        ]
+
+class ProveedoresDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Proveedores
+        fields = ['nombre', 'contacto', 'creadopor', 'fechacreacion']

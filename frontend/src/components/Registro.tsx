@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../styles/auth.css';
+
 //import LayoutAdmin from '../../layout/LayoutAdmin.tsx';
 
 const BASE_URL = 'http://127.0.0.1:8000';
@@ -44,7 +46,7 @@ const Registro = () => {
   };
 
   return (
-    <div style={styles.container}>
+    <div className="auth-page">
       <div style={styles.card}>
         <h2 style={styles.title}>Registrarse en el Sistema</h2>
         <form onSubmit={handleSubmit} style={styles.form}>
@@ -115,6 +117,11 @@ const Registro = () => {
           <button type="submit" style={styles.button}>
             Registrarse
           </button>
+          <div className="auth-footer">
+          <p>
+            ¿Ya tienes cuenta? <a href="/login">Inicia sesión </a>
+          </p>
+        </div>
         </form>
       </div>
     </div>

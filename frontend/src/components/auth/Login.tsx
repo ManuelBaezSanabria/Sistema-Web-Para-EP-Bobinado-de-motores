@@ -78,7 +78,7 @@ const Login: React.FC = () => {
 
         <div className="auth-footer">
           <p>
-            ¿No tienes cuenta? <a href="/register">Regístrate</a>
+            ¿No tienes cuenta? <a href="/registro">Regístrate</a>
           </p>
         </div>
       </div>

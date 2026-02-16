@@ -4,6 +4,7 @@ import Registro from './components/Registro.tsx';
 import Usuarios from './components/Usuarios.tsx';
 import Login from "./components/auth/Login.tsx";
 import Ordenes from './components/pages/Ordenes/Ordenes.tsx';
+import Proveedores from './components/pages/Proveedores/Proveedores.tsx';
 import RegistroSecretaria from './components/pages/Usuarios/RegistroSecretaria.tsx';
 import DashboardClientes from './components/pages/Clientes/DashboardClientes.tsx';
 import './App.css';
@@ -62,6 +63,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Ordenes />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/proveedores" 
+            element={
+              <ProtectedRoute>
+                <Proveedores />
               </ProtectedRoute>
             } 
           />
